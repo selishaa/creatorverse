@@ -1,40 +1,35 @@
 import React, { useState } from 'react';
-import './App.css';
 import Navbar from './components/navbar';
-import Form1 from './components/form1';
 import Form2 from './components/form2';
+import Form1 from './components/form1';
 
 function App() {
-  const [showForm, setShowForm] = useState(false);
-  const [showForm1, setShowForm1] = useState(false);
+    const [showForm2, setShowForm2] = useState(false);
+    const [creators, setCreators] = useState([]);
 
-  const toggleForm = () => {
-    setShowForm(!showForm);
-    setShowForm1(false); // Hide Form1 when showing Form2
-  };
+    const handleAddCreator = (newCreator) => {
+        setCreators([...creators, newCreator]);
+        setShowForm2(false); // Hide Form2 after submission
+    };
 
-  const toggleForm1 = () => {
-    setShowForm1(!showForm1);
-    setShowForm(false); // Hide Form2 when showing Form1
-  };
+    const handleDeleteCreator = (index) => {
+        const updatedCreators = creators.filter((_, i) => i !== index);
+        setCreators(updatedCreators);
+    };
 
-  return (
-    <div>
-      <div className="Container">
-        <Navbar toggleForm={toggleForm} toggleForm1={toggleForm1} />
-      </div>
-      <div className="secondContainer">
-        {showForm ? (
-          <Form2 />
-        ) : null}
-        {showForm1 ? (
-          <Form1 />
-        ) : null}
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <div className="Container">
+                <Navbar toggleForm={() => setShowForm2(!showForm2)} />
+            </div>
+            <div className="secondContainer">
+                {showForm2 ? <Form2 onAddCreator={handleAddCreator} /> : <Form1 creators={creators} onDeleteCreator={handleDeleteCreator} />}
+            </div>
+        </div>
+    );
 }
 
 export default App;
+
 
 

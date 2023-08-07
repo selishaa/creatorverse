@@ -48,12 +48,12 @@ const Navbar = ({ toggleForm, toggleForm1 }) => {
         <header style={elementStyles}>
           <h1 style={titleStyles}>CREATORVERSE</h1>
           <nav style={navStyles}>
-            <span style={navLinkStyles} onClick={toggleForm1}>
+            <a href="#" style={navLinkStyles} onClick={() => toggleForm('Form1')}>
               VIEW ALL CREATORS
-            </span>
-            <span style={navLinkStyles} onClick={toggleForm}>
+            </a>
+            <a href="#" style={navLinkStyles} onClick={() => toggleForm('Form2')}>
               ADD A CREATOR
-            </span>
+            </a>
             {/* Add more navigation links as needed */}
           </nav>
         </header>
