@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Form2 = ({ onAddCreator }) => {
+
+    const navigate = useNavigate();
+
     const [creatorData, setCreatorData] = useState({
         firstname: '',
         lastname: '',
@@ -17,7 +22,17 @@ const Form2 = ({ onAddCreator }) => {
             image: '',
             description: '',
         });
+        navigate('/');
     };
+
+
+
+
+
+
+
+
+    
 
     const formSectionStyles = {
         display: 'flex',
@@ -148,8 +163,8 @@ const Form2 = ({ onAddCreator }) => {
                     </label>
 
                     <button
+    
                         style={buttonStyles}
-                        onMouseOver={(e) => (e.target.style = { ...buttonStyles, ...buttonHoverStyles })}
                     >
                         Submit
                     </button>
