@@ -3,6 +3,8 @@ import Navbar from './components/navbar';
 import Form2 from './components/form2';
 import Form1 from './components/form1';
 import EditCreator from "./components/EditCreator"
+import ViewCreator from "./components/ViewCreator"
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -68,7 +70,7 @@ function App() {
   //delete the state
 
     const handleDeleteCreator = (index) => {
-        const updatedCreators = creators.filter( (_, i) => i !== index);
+        const updatedCreators = creators.filter( (_, i) => i != index);
         setCreators(updatedCreators);
     };
     
@@ -94,6 +96,10 @@ function App() {
               <Route
               path="/edit/:index"
               element= {<EditCreator creators={creators} onEdit = {onEdit} />}
+            />
+            <Route
+              path="/creators/:index"
+              element= {<ViewCreator creators={creators} onDelete = {handleDeleteCreator} />}
             />
 
            </Routes>
