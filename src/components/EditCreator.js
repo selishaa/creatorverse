@@ -2,6 +2,9 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './editcreator.css';
+
+
 
 
 const EditCreator = ({onEdit, creators}) => {

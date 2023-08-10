@@ -23,7 +23,7 @@ const Card = ({ creator, onDeleteCreator, onEditCreator, index }) => {
         {creator.firstname} {creator.lastname}
       </h3>
       <p className="description">{creator.description}</p>
-      <div className="button-container">
+      <div className="buttons-container">
         <button className="edit-button" onClick={() => handleEditClick(index)}>
         <i class="fa-solid fa-pen-to-square"></i>
         </button>

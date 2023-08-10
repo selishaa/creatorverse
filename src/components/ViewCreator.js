@@ -18,7 +18,7 @@ const ViewCreator = ({ creators, onDelete }) => {
     navigate(`/edit/${index}`, { state: { creator } });
   };
 
-  const handleDeleteClick = ()=>{
+  const handleDeleteClick = () => {
     onDelete(index);
     navigate(`/`);
 
@@ -31,16 +31,21 @@ const ViewCreator = ({ creators, onDelete }) => {
         {creator.image && <img src={creator.image} alt={creator.name} />}
       </div>
       <div className="description-container">
-        <h2>{creator.firstname} {creator.lastname}</h2>
+        <div className='name-container'>
+        <h2 className='name'>{creator.firstname} {creator.lastname}</h2>
+        </div>
         <p>{creator.description}</p>
       </div>
-      <div className="button-container">
-        <button className="delete-button" onClick={handleDeleteClick}>
-          Delete Creator
-        </button>
-        <button className="edit-button" onClick={handleEditClick}>
-          Edit Creator
-        </button>
+      <div className="buttons-containers">
+        <div className='button-groups'>
+          <button className="delete-buttons" onClick={handleDeleteClick}>
+            Delete
+          </button>
+          <button className="edit-buttons" onClick={handleEditClick}>
+            Edit
+          </button>
+        </div>
+
       </div>
     </div>
   );

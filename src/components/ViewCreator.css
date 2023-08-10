@@ -1,44 +1,140 @@
+/* ViewCreator.css */
+
 .view-creator-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
+  display: flex;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #e0dbdb;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.picture-container {
+  width: 370px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   
-  .picture-container {
-    flex: 1;
-    margin-right: 20px;
-  }
+
+}
+
+.picture-container img {
+  max-width: 100%;
+  max-height: 550px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.content-container {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 90px; /* Adjust this value as needed */
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.name {
+  font-size: 1.5rem;
+  color: #03455d;
+  margin-right: 10px;
+}
+
+.description-container {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5b74f4;
+  padding-left: 80px; /* Increased left padding */
+}
+
+.buttons-containers {
+  display: flex;
   
-  .picture-container img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
+  justify-content: flex-start; /* Align buttons to the left */
+  margin-top: auto; 
   
-  .description-container {
-    flex: 2;
-  }
+}
+.button-groups {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: -200px;
   
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+ 
+ 
+}
+
+.add-button,
+.delete-buttons {
+  margin: -10px 20px;
+  padding: 10px 100px;
+ 
+  color: white;
   
-  .add-button,
-  .delete-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+ 
+  cursor: pointer;
+  transition: background-color 0.3s;
+width: 400px;
+
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+
+}
+.edit-buttons {
+  padding: 10px 100px;
+  width: 420px;
+  margin: -10px 20px;
+  background-color:#79bbff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+
+}
+
+.add-button:hover,
+.delete-buttons:hover {
+
   
-  .add-button:hover,
-  .delete-button:hover {
-    background-color: #0056b3;
-  }
-  
+  border-color: black;
+  border-width: 1px;
+
+ 
+}
+.edit-buttons:hover {
+  background-color: #0056b3;
+  border-color: black;
+  border-width: 1px;
+ 
+}

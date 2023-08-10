@@ -1,8 +1,8 @@
 .card {
     border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 40px;
-    margin: 10px;
+    border-radius: 20px;
+    padding: 70px;
+    margin: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 500px;
+    max-width: 300px;
     position: relative;
     background-size: cover;
     background-position: center;
@@ -33,11 +33,12 @@
     margin-bottom: 15px;
   }
   
-  .button-container {
+  .buttons-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row; /* Arrange buttons horizontally */
     align-items: center;
-    margin-top: 5px;
+    margin-top: 90px;
+    width: 100%; /* Adjust the width as needed */
   }
   
   .edit-button,
@@ -51,6 +52,8 @@
     cursor: pointer;
     font-size: 0.7rem;
     transition: background-color 0.3s;
+    margin-right: 5px;
+    margin-top: 10px;
   }
   
   .edit-button:hover,
@@ -58,11 +61,3 @@
   .delete-button:hover {
     background-color: #0056b3;
   }
-  
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px;
-  }
-  
