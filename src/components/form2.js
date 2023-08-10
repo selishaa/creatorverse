@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './form2.css';
 
 
 const Form2 = ({ onAddCreator }) => {
@@ -7,18 +8,19 @@ const Form2 = ({ onAddCreator }) => {
     const navigate = useNavigate();
 
     const [creatorData, setCreatorData] = useState({
-        firstname: '',
-        lastname: '',
+        name: '',
+        SocialMedia: '',
         image: '',
         description: '',
+        
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
         onAddCreator(creatorData);
         setCreatorData({
-            firstname: '',
-            lastname: '',
+            name: '',
+            SocialMedia: '',
             image: '',
             description: '',
         });
@@ -90,17 +92,17 @@ const Form2 = ({ onAddCreator }) => {
             <div className="form-container">
                 <section style={formSectionStyles}>
                     <label style={labelStyles}>
-                        First name
+                        Name
                         <input
                             style={inputStyles}
                             type="text"
-                            name="firstname"
+                            name="name"
                             placeholder="First name"
-                            value={creatorData.firstname}
+                            value={creatorData.name}
                             onChange={(e) =>
                                 setCreatorData({
                                     ...creatorData,
-                                    firstname: e.target.value,
+                                    name: e.target.value,
                                 })
                             }
                             required
@@ -108,17 +110,17 @@ const Form2 = ({ onAddCreator }) => {
                     </label>
 
                     <label style={labelStyles}>
-                        Last name
+                        Social Media
                         <input
                             style={inputStyles}
                             type="text"
-                            name="lastname"
-                            placeholder="Last name"
-                            value={creatorData.lastname}
+                            name="SocialMedia"
+                            placeholder="Social Media URL"
+                            value={creatorData.SocialMedia}
                             onChange={(e) =>
                                 setCreatorData({
                                     ...creatorData,
-                                    lastname: e.target.value,
+                                    SocialMedia: e.target.value,
                                 })
                             }
                             required

@@ -20,8 +20,11 @@ const Card = ({ creator, onDeleteCreator, onEditCreator, index }) => {
   return (
     <div className="card" style={{ backgroundImage: `url(${creator.image})`, backgroundSize: 'cover' }}>
       <h3 className="title">
-        {creator.firstname} {creator.lastname}
-      </h3>
+        {creator.name}
+      <a href={creator.SocialMedia} target="_blank" rel="noopener noreferrer">
+        <i className="fas fa-external-link-alt social-icon"></i>
+      </a>
+    </h3>
       <p className="description">{creator.description}</p>
       <div className="buttons-container">
         <button className="edit-button" onClick={() => handleEditClick(index)}>

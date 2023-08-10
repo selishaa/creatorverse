@@ -1,12 +1,19 @@
-/* ViewCreator.css */
 
 .view-creator-container {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   padding: 40px;
   background-color: #e0dbdb;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.a {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
 .picture-container {
@@ -15,8 +22,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
-
+  margin-right: 45px;
 }
 
 .picture-container img {
@@ -26,52 +32,60 @@
   object-fit: contain;
 }
 
-.content-container {
+.description-containers {
   flex: 1;
-  padding: 0 20px;
+  padding-left: 10px; /* Adjust this value to add spacing between image and description */
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-right: 90px; /* Adjust this value as needed */
+  justify-content: center;
+  width: 740px;
+  margin-left: 0px;
+  
+  
 }
-
 .name-container {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+ 
 }
+
 .name {
   font-size: 1.5rem;
   color: #03455d;
-  margin-right: 10px;
+  
+  margin-right: 130px;
 }
 
-.description-container {
-  text-align: left;
+.desc {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #5b74f4;
-  padding-left: 80px; /* Increased left padding */
 }
 
-.buttons-containers {
+.b {
   display: flex;
-  
-  justify-content: flex-start; /* Align buttons to the left */
-  margin-top: auto; 
-  
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 290px;
 }
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px ;
+}
+
 .button-groups {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  margin-left: -200px;
-  
- 
- 
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.add-button,
+
+
 .delete-buttons {
   margin: -10px 20px;
   padding: 10px 100px;

@@ -18,8 +18,8 @@ const { index } = useParams();
 
   // Implement your edit form and logic using the 'creator' object
   const [creatorData, setCreatorData] = useState({
-    firstname: creator.firstname,
-    lastname: creator.lastname,
+    name: creator.name,
+    SocialMedia: creator.SocialMedia,
     image: creator.image,
     description: creator.description,
 });
@@ -31,8 +31,8 @@ const handleSubmit = (e, index) => {
     console.log("index is here", index);
     onEdit(index, creatorData);
     setCreatorData({
-        firstname: '',
-        lastname: '',
+        name: '',
+        SocialMedia: '',
         image: '',
         description: '',
     });
@@ -49,17 +49,17 @@ if (!creator) {
     <div className="form-container">
         <section >
             <label >
-                First name
+               Name
                 <input
                    
                     type="text"
-                    name="firstname"
+                    name="name"
                     placeholder="First name"
-                    value={creatorData.firstname}
+                    value={creatorData.name}
                     onChange={(e) =>
                         setCreatorData({
                             ...creatorData,
-                            firstname: e.target.value,
+                            name: e.target.value,
                         })
                     }
                     required
@@ -67,17 +67,17 @@ if (!creator) {
             </label>
 
             <label >
-                Last name
+                Social Media
                 <input
                     
                     type="text"
-                    name="lastname"
-                    placeholder="Last name"
-                    value={creatorData.lastname}
+                    name="SocialMedia"
+                    placeholder="Social Media"
+                    value={creatorData.SocialMedia}
                     onChange={(e) =>
                         setCreatorData({
                             ...creatorData,
-                            lastname: e.target.value,
+                            SocialMedia: e.target.value,
                         })
                     }
                     required

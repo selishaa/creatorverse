@@ -27,25 +27,35 @@ const ViewCreator = ({ creators, onDelete }) => {
 
   return (
     <div className="view-creator-container">
-      <div className="picture-container">
-        {creator.image && <img src={creator.image} alt={creator.name} />}
-      </div>
-      <div className="description-container">
-        <div className='name-container'>
-        <h2 className='name'>{creator.firstname} {creator.lastname}</h2>
-        </div>
-        <p>{creator.description}</p>
-      </div>
-      <div className="buttons-containers">
-        <div className='button-groups'>
-          <button className="delete-buttons" onClick={handleDeleteClick}>
-            Delete
-          </button>
-          <button className="edit-buttons" onClick={handleEditClick}>
-            Edit
-          </button>
-        </div>
+      <div className='a'>
 
+        <div className="picture-container">
+          {creator.image && <img src={creator.image} alt={creator.name} />}
+        </div>
+        <div className="description-containers">
+          <div className='name-container'>
+            <h2 className='name'>{creator.name} {''}
+            <a href={creator.SocialMedia} target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-external-link-alt social-icon"></i>
+            </a>
+            </h2>
+          </div>
+          <p className='desc'>{creator.description}</p>
+
+        </div>
+      </div>
+      <div className='b'>
+        <div className="buttons-containers">
+          <div className='button-groups'>
+            <button className="delete-buttons" onClick={handleDeleteClick}>
+              Delete
+            </button>
+            <button className="edit-buttons" onClick={handleEditClick}>
+              Edit
+            </button>
+          </div>
+
+        </div>
       </div>
     </div>
   );
