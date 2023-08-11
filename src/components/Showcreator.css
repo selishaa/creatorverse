@@ -32,16 +32,30 @@
     filter: blur(5px);
     -webkit-filter: blur(5px);
   }
+  .no-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    
+    border-radius: 10px;
+    
+  }
+  
+  .no-message p {
+    font-size: 1.5rem;
+    color: #777;
+  }
   
   .card h3 {
     font-size: 1.2rem;
-    color: #034958;
+    color: #fbfefe;
     margin-bottom: 5px;
   }
   
   .card p {
     font-size: 1rem;
-    color: #777;
+    color: #f8f2f2;
     margin-bottom: 10px;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -9,30 +9,30 @@ import './editcreator.css';
 
 const EditCreator = ({onEdit, creators}) => {
 const { index } = useParams();
-  const location = useLocation();
+
   //const { creator } = location.state;
-  const creator = creators[index]
+  const creator = creators.find((c) => c.id === parseInt(index));
+  console.log("This is the creator", creator);
   const navigate = useNavigate();
 
 
 
   // Implement your edit form and logic using the 'creator' object
   const [creatorData, setCreatorData] = useState({
+    id: creator.id,
     name: creator.name,
-    SocialMedia: creator.SocialMedia,
+    socialmedia: creator.socialmedia,
     image: creator.image,
     description: creator.description,
 });
 
 const handleSubmit = (e, index) => {
     e.preventDefault();
-    console.log("This is the value of the index.", index);
-    console.log("creatorData is here", creatorData);
-    console.log("index is here", index);
-    onEdit(index, creatorData);
+    
+    onEdit(index, creatorData, creator.id);
     setCreatorData({
         name: '',
-        SocialMedia: '',
+        socialmedia: '',
         image: '',
         description: '',
     });
@@ -73,11 +73,11 @@ if (!creator) {
                     type="text"
                     name="SocialMedia"
                     placeholder="Social Media"
-                    value={creatorData.SocialMedia}
+                    value={creatorData.socialmedia}
                     onChange={(e) =>
                         setCreatorData({
                             ...creatorData,
-                            SocialMedia: e.target.value,
+                            socialmedia: e.target.value,
                         })
                     }
                     required

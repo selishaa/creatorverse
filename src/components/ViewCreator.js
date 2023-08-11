@@ -7,7 +7,7 @@ const ViewCreator = ({ creators, onDelete }) => {
   const { index } = useParams();
   const navigate = useNavigate(); // Initialize useHistory
 
-  const creator = creators[index];
+  const creator = creators.find((c) => c.id === parseInt(index));
 
   if (!creator) {
     return <div>No creator available</div>;
@@ -19,7 +19,7 @@ const ViewCreator = ({ creators, onDelete }) => {
   };
 
   const handleDeleteClick = () => {
-    onDelete(index);
+    onDelete(creator);
     navigate(`/`);
 
 
